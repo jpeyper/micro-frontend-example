@@ -1,0 +1,20 @@
+{
+  "name": "micro-frontend-example",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  },
+  "scripts": {
+    "install": "run-p install:parent install:example1 install:example2 install:example3",
+    "install:parent": "npm --prefix parent install",
+    "install:example1": "npm --prefix example1 install",
+    "install:example2": "npm --prefix example2 install",
+    "install:example3": "npm --prefix example3 install",
+    "start": "run-p start:parent start:example1 start:example2 start:example3",
+    "start:parent": "npm --prefix parent start",
+    "start:example1": "npm --prefix example1 start",
+    "start:example2": "npm --prefix example2 start",
+    "start:example3": "npm --prefix example3 start"
+  }
+}
