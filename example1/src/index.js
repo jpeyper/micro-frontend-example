@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import { createBrowserHistory } from "history";
 
-window.renderExample1 = (containerId, history = createBrowserHistory(), basename = '') => {
-  ReactDOM.render(<App history={history} basename={basename} />, document.getElementById(containerId));
+window.renderExample1 = (container, history = createBrowserHistory(), basename = '') => {
+  ReactDOM.render(<App history={history} basename={basename} />, container);
 };
 
-window.unmountExample1 = containerId => {
-  ReactDOM.unmountComponentAtNode(document.getElementById(containerId));
+window.unmountExample1 = container => {
+  ReactDOM.unmountComponentAtNode(container);
 };
