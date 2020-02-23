@@ -13,9 +13,7 @@ function MicroFrontend({ name, host, history, basename }) {
     }
 
     const unmountMicroFrontend = () => {
-      console.log(`unmounting ${name}`, mfContainer)
       if (window[`unmount${name}`]) {
-        console.log(`actually unmounting ${name}`, mfContainer)
         window[`unmount${name}`](mfContainer);
       }
     }
