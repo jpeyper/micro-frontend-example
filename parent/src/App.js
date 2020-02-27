@@ -9,8 +9,8 @@ import Example1 from './Example1'
 import Example2 from './Example2'
 import Example3 from './Example3'
 
-const App = () => (
-  <Router>
+const App = ({ history, basename }) => (
+  <Router history={history}>
     <header className="App-header">
       <h1>
         Welcome to Micro Frontends
@@ -19,20 +19,20 @@ const App = () => (
     <nav>
       <ul>
         <li>
-          <Link to="/example1">Example 1</Link>
+          <Link to={`${basename}/example1`}>Example 1</Link>
         </li>
         <li>
-          <Link to="/example2">Example 2</Link>
+          <Link to={`${basename}/example2`}>Example 2</Link>
         </li>
         <li>
-          <Link to="/example3">Example 3</Link>
+          <Link to={`${basename}/example3`}>Example 3</Link>
         </li>
       </ul>
     </nav>
     <Example1 />
     <Switch>
-      <Route path="/example2" component={Example2} />
-      <Route path="/example3" component={Example3} />
+      <Route path={`${basename}/example2`} component={Example2} />
+      <Route path={`${basename}/example3`} component={Example3} />
     </Switch>
   </Router>
 );
