@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react"
 
-function MicroFrontend({ name, host, history, basename }) {
+const MicroFrontend = ({ name, host, history, basename }) => {
   const mfRef = useRef()
   useEffect(() => {
     const scriptId = `micro-frontend-script-${name}`
