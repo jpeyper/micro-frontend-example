@@ -1,31 +1,14 @@
 import React from 'react';
-import {
-  Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-import Example2 from './Example2'
+import Parent from './Parent'
 
 const App = ({ history, basename }) => (
-  <Router history={history}>
+  <>
     <p>
       Hello from example 3<br />
-      This example is showing how microfront ends can also be containers for other micro frontends, and do things like adding sub routes.
+      This example is showing how microfront ends can also be containers for other micro frontends, and do things like adding sub routes. It's mounting the parent again as the sub-component.
     </p>
-    <nav>
-      <ul>
-        <li>
-          <Link to={`${basename}/example2`}>Example 2</Link>
-        </li>
-      </ul>
-    </nav>
-    <Switch>
-      <Route path={`${basename}/example2`}>
-        <Example2 history={history} basename={basename} />
-      </Route>
-    </Switch>
-  </Router>
+    <Parent history={history} basename={basename} />
+  </>
 )
 
 export default App;

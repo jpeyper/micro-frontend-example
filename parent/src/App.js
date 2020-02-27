@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
+  Router,
   Switch,
   Route,
   Link
@@ -29,10 +29,14 @@ const App = ({ history, basename }) => (
         </li>
       </ul>
     </nav>
-    <Example1 />
+    <Example1 history={history} basename={basename} />
     <Switch>
-      <Route path={`${basename}/example2`} component={Example2} />
-      <Route path={`${basename}/example3`} component={Example3} />
+      <Route path={`${basename}/example2`}>
+        <Example2 history={history} basename={basename} />
+      </Route>
+      <Route path={`${basename}/example3`}>
+        <Example3 history={history} basename={basename} />
+      </Route>
     </Switch>
   </Router>
 );
